@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "olist-warehouse", "olist-warehouse.dtproj", "{C2506F0A-35EF-4619-A784-6FBF4264122F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2506F0A-35EF-4619-A784-6FBF4264122F}.Development|Default.ActiveCfg = Development
+		{C2506F0A-35EF-4619-A784-6FBF4264122F}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50FBC0DA-97AA-4AEF-B350-1B6D119C5474}
+	EndGlobalSection
+EndGlobal
