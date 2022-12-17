@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{19652C21-82E0-4C5F-8B04-F32C2663F6EE}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{52172C19-A75E-40AA-AC36-D1867D044BFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/mKfiDlk4UyeuxQ6JxQ7nAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSNctSJyRlNNMFcEp+F6YkTqbVS8Q+79fqB3EL2QzhpQAAAAAOgAAAAAIAACAAAACjKvRqmu16Y2DIyfO46FS2uRJ7wVooxkwuc625veBbRjAAAAD9DkuSZj2uCjETTyqAEkOcG+kNc0YhUK8umgDJg7Yk/QoGX9+uiFeaVMqHrahJG6NAAAAAqVLRw+DmFlhanYg/11aAKNns8EQm+gsS4Xm63FIqw2RGutc9v6DzzajVjUUeYdIMAENne+j8qlU0F3Dwwh5sdg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/mKfiDlk4UyeuxQ6JxQ7nAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADTbIJjpTiwN8cvSnyZwpcbKSogbABdGx9acDWqgWy8aAAAAAAOgAAAAAIAACAAAACN7DdMtAYdntfa7UmKfkPqsFpOIuR7DhChTya2mViLAzAAAADSymOJwiurNpe38fKL9TmTVZc8/NYkOuV7rTlZwJfrD9yNfIYBQnhsyA8Cd1GieUNAAAAApE74dDo0t7OhsftimaCWIwxnLyht5tSUd5XXv3LN3DRJbul75xeyYFexpWOZeE6NsxQhs/1uQM7WnxUORoeSvw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,6 +46,757 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Stage Order"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{66F0F85B-986F-49B4-99FB-D4FCFBACDB06}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage Order"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Stage Order\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="order_id"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="customer_id"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="order_status"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_status]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_purchase_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_purchase_timestamp"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_purchase_timestamp]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_approved_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_approved_at"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_approved_at]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_delivered_carrier_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_delivered_carrier_date"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_carrier_date]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_delivered_customer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_delivered_customer_date"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_customer_date]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input].Columns[order_estimated_delivery_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="order_estimated_delivery_date"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_estimated_delivery_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]"
+                      name="Copy of order_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]"
+                      name="Copy of customer_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_status]"
+                      name="Copy of order_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp]"
+                      name="Copy of order_purchase_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_purchase_timestamp]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_approved_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_approved_at]"
+                      name="Copy of order_approved_at"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_approved_at]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_carrier_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_carrier_date]"
+                      name="Copy of order_delivered_carrier_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_carrier_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_customer_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_customer_date]"
+                      name="Copy of order_delivered_customer_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_customer_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_estimated_delivery_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_estimated_delivery_date]"
+                      name="Copy of order_estimated_delivery_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_estimated_delivery_date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Order\Order"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="ODBC Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="ODBC Source"
+              name="Order"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select
+    order_id
+    , customer_id
+    , order_status
+    , order_purchase_timestamp
+    , order_approved_at
+    , order_delivered_carrier_date
+    , order_delivered_customer_date
+    , order_estimated_delivery_date
+from olist.orders;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Order\Order.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MySQLSSISLink]"
+                  connectionManagerRefId="Package.ConnectionManagers[MySQLSSISLink]"
+                  description="The ODBC runtime connection used to access the database."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Stage Order\Order.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_id]"
+                      length="32"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[customer_id]"
+                      length="32"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_status]"
+                      length="15"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_status]"
+                      name="order_status" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_approved_at]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_approved_at]"
+                      name="order_approved_at" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_carrier_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_carrier_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_carrier_date]"
+                      name="order_delivered_carrier_date" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="order_purchase_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_carrier_date]"
+                      dataType="dbTimeStamp"
+                      name="order_delivered_carrier_date" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp"
+                      name="order_delivered_customer_date" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp"
+                      name="order_estimated_delivery_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_id]"
+                      length="32"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[customer_id]"
+                      length="32"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_status]"
+                      length="15"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_status]"
+                      name="order_status" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_approved_at]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_approved_at]"
+                      name="order_approved_at" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_delivered_carrier_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_carrier_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_delivered_carrier_date]"
+                      name="order_delivered_carrier_date" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_estimated_delivery_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Stage Order\Order.Outputs[ODBC Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Order.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Order\Staging Order"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Staging Order"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg_order]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Order\Staging Order.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[34.28.99.173.Olist_Staging.matheus]"
+                  connectionManagerRefId="Package.ConnectionManagers[34.28.99.173.Olist_Staging.matheus]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Copy of order_id"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_id]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of customer_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="Copy of customer_id"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_id]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Copy of order_status"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_status]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_purchase_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of order_purchase_timestamp"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_approved_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of order_approved_at"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_approved_at]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_delivered_carrier_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of order_delivered_carrier_date"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_carrier_date]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_carrier_date]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_delivered_customer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of order_delivered_customer_date"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_delivered_customer_date]" />
+                    <inputColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].Columns[Copy of order_estimated_delivery_date]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of order_estimated_delivery_date"
+                      externalMetadataColumnId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_estimated_delivery_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="order_purchase_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      dataType="dbTimeStamp"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_carrier_date]"
+                      dataType="dbTimeStamp"
+                      name="order_delivered_carrier_date" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      dataType="dbTimeStamp"
+                      name="order_delivered_customer_date" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      dataType="dbDate"
+                      name="order_estimated_delivery_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Order\Staging Order.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Order\Staging Order.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Staging Order.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Order\Staging Order.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Order\Staging Order.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Stage Order.Paths[Data Conversion Output]"
+              endId="Package\Stage Order\Staging Order.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Stage Order\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Stage Order.Paths[ODBC Source Output]"
+              endId="Package\Stage Order\Data Conversion.Inputs[Data Conversion Input]"
+              name="ODBC Source Output"
+              startId="Package\Stage Order\Order.Outputs[ODBC Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Stage Order Items"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1537,6 +2288,14 @@ from olist.products;</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Stage Order Items" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8B5EC4A-C820-44D5-9289-A1C2F028072A}"
+      DTS:From="Package\Stage Order Items"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Stage Order" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1549,7 +2308,7 @@ from olist.products;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\Stage Products"
@@ -1557,21 +2316,47 @@ from olist.products;</property>
         <NodeLayout
           Size="169,42"
           Id="Package\Stage Order Items"
-          TopLeft="292,81" />
+          TopLeft="291,82" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="207,102">
+          TopLeft="207,102.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85,0"
+              EndConnector="84,0"
               Start="0,0"
-              End="77.5,0">
+              End="76.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="77.5,0" />
+                    End="76.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Stage Order"
+          TopLeft="548,78" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="460,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="88,0"
+              Start="0,0"
+              End="80.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1766,6 +2551,91 @@ from olist.products;</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Stage Order Items\Staging Order Items">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Stage Order">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Stage Order\Order"
+          TopLeft="195,39" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Stage Order\Data Conversion"
+          TopLeft="172,160" />
+        <EdgeLayout
+          Id="Package\Stage Order.Paths[ODBC Source Output]"
+          TopLeft="250.5,81">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Stage Order\Staging Order"
+          TopLeft="175,287" />
+        <EdgeLayout
+          Id="Package\Stage Order.Paths[Data Conversion Output]"
+          TopLeft="250.5,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Order\Order">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Order\Staging Order">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
