@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{3F0BDEBA-3E88-487C-8F55-CB737E6DC33F}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{19652C21-82E0-4C5F-8B04-F32C2663F6EE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/mKfiDlk4UyeuxQ6JxQ7nAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACyF05xOV4v3ToX+OT9TUWVStB5g9hXmh/LRyv2gFe5JwAAAAAOgAAAAAIAACAAAACf75Ofs93DB1EI3Z0G3a9t89H0Txmk5kBwPEgRIxQbRzAAAAADivYeMiYI2NHLALGatZG9k0PPgTULLFcaRp3ps+brpinNgkv8sPn+epfpBnOnAxhAAAAAxx9XlYq5uInAJAhJLY6EbmOskJfPCJg7TRyTK11nAL4qEYKTGdXyX2xFpLjsm/nLezWzbuweOdggXhhFN37xmw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/mKfiDlk4UyeuxQ6JxQ7nAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSNctSJyRlNNMFcEp+F6YkTqbVS8Q+79fqB3EL2QzhpQAAAAAOgAAAAAIAACAAAACjKvRqmu16Y2DIyfO46FS2uRJ7wVooxkwuc625veBbRjAAAAD9DkuSZj2uCjETTyqAEkOcG+kNc0YhUK8umgDJg7Yk/QoGX9+uiFeaVMqHrahJG6NAAAAAqVLRw+DmFlhanYg/11aAKNns8EQm+gsS4Xm63FIqw2RGutc9v6DzzajVjUUeYdIMAENne+j8qlU0F3Dwwh5sdg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1553,37 +1553,25 @@ from olist.products;</property>
         <NodeLayout
           Size="154,42"
           Id="Package\Stage Products"
-          TopLeft="203,75" />
+          TopLeft="53,81" />
         <NodeLayout
           Size="169,42"
           Id="Package\Stage Order Items"
-          TopLeft="204,195" />
+          TopLeft="292,81" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="280,117">
+          TopLeft="207,102">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.5,78"
+              EndConnector="85,0"
               Start="0,0"
-              End="8.5,70.5">
+              End="77.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="4,39" />
-                  <mssgle:LineSegment
-                    End="4.5,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,39"
-                    Point2="8.5,39"
-                    Point3="8.5,43" />
-                  <mssgle:LineSegment
-                    End="8.5,70.5" />
+                    End="77.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
